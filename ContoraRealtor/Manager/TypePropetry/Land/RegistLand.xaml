@@ -1,0 +1,20 @@
+﻿<Window x:Class="ContoraRealtor.RegistLand"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContoraRealtor"
+        mc:Ignorable="d"
+             WindowStartupLocation="CenterScreen" 
+         ResizeMode="NoResize" Background="#FFCADEEB"
+        Title="Добавить земельный участок" Height="271.963" Width="613.552" Icon="/ContoraRealtor;component/Resours/logo.png" Closing="Window_Closing">
+    <Grid Loaded="Grid_Loaded">
+        <TextBox MaxLength="5" x:Name="squ" HorizontalAlignment="Left" Height="23" Margin="282,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="squ_TextChanged"/>
+        <Button x:Name="add" Content="Добавить" HorizontalAlignment="Left" Margin="318,205,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Margin="207,205,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Label x:Name="La" Content="Площадь (в м2)" HorizontalAlignment="Left" Margin="186,19,0,0" VerticalAlignment="Top"/>
+        <DataGrid IsReadOnly="True" ColumnWidth="*"  CanUserAddRows="False" CanUserDeleteRows="False" x:Name="ClientLi" HorizontalAlignment="Left" Height="101" Margin="63,81,0,0" VerticalAlignment="Top" Width="507" Loaded="ClientLi_Loaded"/>
+        <Label x:Name="Cli" Content="Выбирите клиента" HorizontalAlignment="Left" Margin="225,50,0,0" VerticalAlignment="Top" Width="207"/>
+
+    </Grid>
+</Window>

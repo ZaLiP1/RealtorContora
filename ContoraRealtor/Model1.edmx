@@ -1,0 +1,963 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище RealtorModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Apartment">
+          <Key>
+            <PropertyRef Name="IdApartment" />
+          </Key>
+          <Property Name="IdApartment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Floor" Type="int" />
+          <Property Name="NumberOfRooms" Type="int" />
+          <Property Name="square" Type="int" />
+          <Property Name="IdClient" Type="int" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Deal">
+          <Key>
+            <PropertyRef Name="idDeal" />
+          </Key>
+          <Property Name="idDeal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdDemand" Type="int" />
+          <Property Name="IdSentence" Type="int" />
+          <Property Name="ComPrice" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="demand">
+          <Key>
+            <PropertyRef Name="IdDemand" />
+          </Key>
+          <Property Name="IdDemand" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdClient" Type="int" />
+          <Property Name="IdRealtor" Type="int" />
+          <Property Name="NameType" Type="int" />
+          <Property Name="TypePropetry" Type="int" />
+          <Property Name="MinPrice" Type="int" />
+          <Property Name="MaxPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="IdHouse" />
+          </Key>
+          <Property Name="IdHouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Storeys" Type="int" />
+          <Property Name="NumberOfRooms" Type="int" />
+          <Property Name="square" Type="int" />
+          <Property Name="IdClient" Type="int" />
+        </EntityType>
+        <EntityType Name="Land">
+          <Key>
+            <PropertyRef Name="IdLand" />
+          </Key>
+          <Property Name="IdLand" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="square" Type="int" />
+          <Property Name="IdClient" Type="int" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="IdManager" />
+          </Key>
+          <Property Name="IdManager" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="rol" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NameTypPropetry">
+          <Key>
+            <PropertyRef Name="IdNamyType" />
+          </Key>
+          <Property Name="IdNamyType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="property">
+          <Key>
+            <PropertyRef Name="idProperty" />
+          </Key>
+          <Property Name="idProperty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Street" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number" Type="int" />
+          <Property Name="latitude" Type="int" />
+          <Property Name="Longitude" Type="int" />
+          <Property Name="idRealtor" Type="int" />
+        </EntityType>
+        <EntityType Name="Realtor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comission" Type="int" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sentence">
+          <Key>
+            <PropertyRef Name="IdSentence" />
+          </Key>
+          <Property Name="IdSentence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdClient" Type="int" />
+          <Property Name="IdRealtor" Type="int" />
+          <Property Name="IdProperty" Type="int" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Apartment_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Apartment">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deal_demand">
+          <End Role="demand" Type="Self.demand" Multiplicity="0..1" />
+          <End Role="Deal" Type="Self.Deal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="demand">
+              <PropertyRef Name="IdDemand" />
+            </Principal>
+            <Dependent Role="Deal">
+              <PropertyRef Name="IdDemand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deal_Sentence">
+          <End Role="Sentence" Type="Self.Sentence" Multiplicity="0..1" />
+          <End Role="Deal" Type="Self.Deal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sentence">
+              <PropertyRef Name="IdSentence" />
+            </Principal>
+            <Dependent Role="Deal">
+              <PropertyRef Name="IdSentence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_Apartment">
+          <End Role="Apartment" Type="Self.Apartment" Multiplicity="0..1" />
+          <End Role="demand" Type="Self.demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Apartment">
+              <PropertyRef Name="IdApartment" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="TypePropetry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="demand" Type="Self.demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_House">
+          <End Role="House" Type="Self.House" Multiplicity="0..1" />
+          <End Role="demand" Type="Self.demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="IdHouse" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="TypePropetry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_Land">
+          <End Role="Land" Type="Self.Land" Multiplicity="0..1" />
+          <End Role="demand" Type="Self.demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Land">
+              <PropertyRef Name="IdLand" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="TypePropetry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_NameTypPropetry">
+          <End Role="NameTypPropetry" Type="Self.NameTypPropetry" Multiplicity="0..1" />
+          <End Role="demand" Type="Self.demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NameTypPropetry">
+              <PropertyRef Name="IdNamyType" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="NameType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_Realtor">
+          <End Role="Realtor" Type="Self.Realtor" Multiplicity="0..1" />
+          <End Role="demand" Type="Self.demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Realtor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="IdRealtor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_House_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="House" Type="Self.House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="House">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Land_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Land" Type="Self.Land" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Land">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_property_Realtor">
+          <End Role="Realtor" Type="Self.Realtor" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Realtor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="idRealtor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sentence_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Sentence" Type="Self.Sentence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sentence">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sentence_property">
+          <End Role="property" Type="Self.property" Multiplicity="0..1" />
+          <End Role="Sentence" Type="Self.Sentence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="property">
+              <PropertyRef Name="idProperty" />
+            </Principal>
+            <Dependent Role="Sentence">
+              <PropertyRef Name="IdProperty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sentence_Realtor">
+          <End Role="Realtor" Type="Self.Realtor" Multiplicity="0..1" />
+          <End Role="Sentence" Type="Self.Sentence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Realtor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sentence">
+              <PropertyRef Name="IdRealtor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище RealtorModelContainer">
+          <EntitySet Name="Apartment" EntityType="Self.Apartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deal" EntityType="Self.Deal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="demand" EntityType="Self.demand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Land" EntityType="Self.Land" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manager" EntityType="Self.Manager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NameTypPropetry" EntityType="Self.NameTypPropetry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="property" EntityType="Self.property" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Realtor" EntityType="Self.Realtor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sentence" EntityType="Self.Sentence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Apartment_Client" Association="Self.FK_Apartment_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Apartment" EntitySet="Apartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deal_demand" Association="Self.FK_Deal_demand">
+            <End Role="demand" EntitySet="demand" />
+            <End Role="Deal" EntitySet="Deal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deal_Sentence" Association="Self.FK_Deal_Sentence">
+            <End Role="Sentence" EntitySet="Sentence" />
+            <End Role="Deal" EntitySet="Deal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_Apartment" Association="Self.FK_demand_Apartment">
+            <End Role="Apartment" EntitySet="Apartment" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_Client" Association="Self.FK_demand_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_House" Association="Self.FK_demand_House">
+            <End Role="House" EntitySet="House" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_Land" Association="Self.FK_demand_Land">
+            <End Role="Land" EntitySet="Land" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_NameTypPropetry" Association="Self.FK_demand_NameTypPropetry">
+            <End Role="NameTypPropetry" EntitySet="NameTypPropetry" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_Realtor" Association="Self.FK_demand_Realtor">
+            <End Role="Realtor" EntitySet="Realtor" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_House_Client" Association="Self.FK_House_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="House" EntitySet="House" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Land_Client" Association="Self.FK_Land_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Land" EntitySet="Land" />
+          </AssociationSet>
+          <AssociationSet Name="FK_property_Realtor" Association="Self.FK_property_Realtor">
+            <End Role="Realtor" EntitySet="Realtor" />
+            <End Role="property" EntitySet="property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sentence_Client" Association="Self.FK_Sentence_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Sentence" EntitySet="Sentence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sentence_property" Association="Self.FK_Sentence_property">
+            <End Role="property" EntitySet="property" />
+            <End Role="Sentence" EntitySet="Sentence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sentence_Realtor" Association="Self.FK_Sentence_Realtor">
+            <End Role="Realtor" EntitySet="Realtor" />
+            <End Role="Sentence" EntitySet="Sentence" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RealtorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RealtorEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Apartment" EntityType="RealtorModel.Apartment" />
+          <EntitySet Name="Client" EntityType="RealtorModel.Client" />
+          <EntitySet Name="Deal" EntityType="RealtorModel.Deal" />
+          <EntitySet Name="demand" EntityType="RealtorModel.demand" />
+          <EntitySet Name="House" EntityType="RealtorModel.House" />
+          <EntitySet Name="Land" EntityType="RealtorModel.Land" />
+          <EntitySet Name="Manager" EntityType="RealtorModel.Manager" />
+          <EntitySet Name="NameTypPropetry" EntityType="RealtorModel.NameTypPropetry" />
+          <EntitySet Name="property" EntityType="RealtorModel.property" />
+          <EntitySet Name="Realtor" EntityType="RealtorModel.Realtor" />
+          <EntitySet Name="Sentence" EntityType="RealtorModel.Sentence" />
+          <EntitySet Name="sysdiagrams" EntityType="RealtorModel.sysdiagrams" />
+          <AssociationSet Name="FK_Apartment_Client" Association="RealtorModel.FK_Apartment_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Apartment" EntitySet="Apartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_Apartment" Association="RealtorModel.FK_demand_Apartment">
+            <End Role="Apartment" EntitySet="Apartment" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_Client" Association="RealtorModel.FK_demand_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_House_Client" Association="RealtorModel.FK_House_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="House" EntitySet="House" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Land_Client" Association="RealtorModel.FK_Land_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Land" EntitySet="Land" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sentence_Client" Association="RealtorModel.FK_Sentence_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Sentence" EntitySet="Sentence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deal_demand" Association="RealtorModel.FK_Deal_demand">
+            <End Role="demand" EntitySet="demand" />
+            <End Role="Deal" EntitySet="Deal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deal_Sentence" Association="RealtorModel.FK_Deal_Sentence">
+            <End Role="Sentence" EntitySet="Sentence" />
+            <End Role="Deal" EntitySet="Deal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_House" Association="RealtorModel.FK_demand_House">
+            <End Role="House" EntitySet="House" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_Land" Association="RealtorModel.FK_demand_Land">
+            <End Role="Land" EntitySet="Land" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_NameTypPropetry" Association="RealtorModel.FK_demand_NameTypPropetry">
+            <End Role="NameTypPropetry" EntitySet="NameTypPropetry" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_demand_Realtor" Association="RealtorModel.FK_demand_Realtor">
+            <End Role="Realtor" EntitySet="Realtor" />
+            <End Role="demand" EntitySet="demand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_property_Realtor" Association="RealtorModel.FK_property_Realtor">
+            <End Role="Realtor" EntitySet="Realtor" />
+            <End Role="property" EntitySet="property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sentence_property" Association="RealtorModel.FK_Sentence_property">
+            <End Role="property" EntitySet="property" />
+            <End Role="Sentence" EntitySet="Sentence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sentence_Realtor" Association="RealtorModel.FK_Sentence_Realtor">
+            <End Role="Realtor" EntitySet="Realtor" />
+            <End Role="Sentence" EntitySet="Sentence" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Apartment">
+          <Key>
+            <PropertyRef Name="IdApartment" />
+          </Key>
+          <Property Name="IdApartment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Floor" Type="Int32" />
+          <Property Name="NumberOfRooms" Type="Int32" />
+          <Property Name="square" Type="Int32" />
+          <Property Name="IdClient" Type="Int32" />
+          <NavigationProperty Name="Client" Relationship="RealtorModel.FK_Apartment_Client" FromRole="Apartment" ToRole="Client" />
+          <NavigationProperty Name="demand" Relationship="RealtorModel.FK_demand_Apartment" FromRole="Apartment" ToRole="demand" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Apartment" Relationship="RealtorModel.FK_Apartment_Client" FromRole="Client" ToRole="Apartment" />
+          <NavigationProperty Name="demand" Relationship="RealtorModel.FK_demand_Client" FromRole="Client" ToRole="demand" />
+          <NavigationProperty Name="House" Relationship="RealtorModel.FK_House_Client" FromRole="Client" ToRole="House" />
+          <NavigationProperty Name="Land" Relationship="RealtorModel.FK_Land_Client" FromRole="Client" ToRole="Land" />
+          <NavigationProperty Name="Sentence" Relationship="RealtorModel.FK_Sentence_Client" FromRole="Client" ToRole="Sentence" />
+        </EntityType>
+        <EntityType Name="Deal">
+          <Key>
+            <PropertyRef Name="idDeal" />
+          </Key>
+          <Property Name="idDeal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdDemand" Type="Int32" />
+          <Property Name="IdSentence" Type="Int32" />
+          <Property Name="ComPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="demand" Relationship="RealtorModel.FK_Deal_demand" FromRole="Deal" ToRole="demand" />
+          <NavigationProperty Name="Sentence" Relationship="RealtorModel.FK_Deal_Sentence" FromRole="Deal" ToRole="Sentence" />
+        </EntityType>
+        <EntityType Name="demand">
+          <Key>
+            <PropertyRef Name="IdDemand" />
+          </Key>
+          <Property Name="IdDemand" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="IdRealtor" Type="Int32" />
+          <Property Name="NameType" Type="Int32" />
+          <Property Name="TypePropetry" Type="Int32" />
+          <Property Name="MinPrice" Type="Int32" />
+          <Property Name="MaxPrice" Type="Int32" />
+          <NavigationProperty Name="Apartment" Relationship="RealtorModel.FK_demand_Apartment" FromRole="demand" ToRole="Apartment" />
+          <NavigationProperty Name="Client" Relationship="RealtorModel.FK_demand_Client" FromRole="demand" ToRole="Client" />
+          <NavigationProperty Name="Deal" Relationship="RealtorModel.FK_Deal_demand" FromRole="demand" ToRole="Deal" />
+          <NavigationProperty Name="House" Relationship="RealtorModel.FK_demand_House" FromRole="demand" ToRole="House" />
+          <NavigationProperty Name="Land" Relationship="RealtorModel.FK_demand_Land" FromRole="demand" ToRole="Land" />
+          <NavigationProperty Name="NameTypPropetry" Relationship="RealtorModel.FK_demand_NameTypPropetry" FromRole="demand" ToRole="NameTypPropetry" />
+          <NavigationProperty Name="Realtor" Relationship="RealtorModel.FK_demand_Realtor" FromRole="demand" ToRole="Realtor" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="IdHouse" />
+          </Key>
+          <Property Name="IdHouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Storeys" Type="Int32" />
+          <Property Name="NumberOfRooms" Type="Int32" />
+          <Property Name="square" Type="Int32" />
+          <Property Name="IdClient" Type="Int32" />
+          <NavigationProperty Name="Client" Relationship="RealtorModel.FK_House_Client" FromRole="House" ToRole="Client" />
+          <NavigationProperty Name="demand" Relationship="RealtorModel.FK_demand_House" FromRole="House" ToRole="demand" />
+        </EntityType>
+        <EntityType Name="Land">
+          <Key>
+            <PropertyRef Name="IdLand" />
+          </Key>
+          <Property Name="IdLand" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="square" Type="Int32" />
+          <Property Name="IdClient" Type="Int32" />
+          <NavigationProperty Name="Client" Relationship="RealtorModel.FK_Land_Client" FromRole="Land" ToRole="Client" />
+          <NavigationProperty Name="demand" Relationship="RealtorModel.FK_demand_Land" FromRole="Land" ToRole="demand" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="IdManager" />
+          </Key>
+          <Property Name="IdManager" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NameTypPropetry">
+          <Key>
+            <PropertyRef Name="IdNamyType" />
+          </Key>
+          <Property Name="IdNamyType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="demand" Relationship="RealtorModel.FK_demand_NameTypPropetry" FromRole="NameTypPropetry" ToRole="demand" />
+        </EntityType>
+        <EntityType Name="property">
+          <Key>
+            <PropertyRef Name="idProperty" />
+          </Key>
+          <Property Name="idProperty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="latitude" Type="Int32" />
+          <Property Name="Longitude" Type="Int32" />
+          <Property Name="idRealtor" Type="Int32" />
+          <NavigationProperty Name="Realtor" Relationship="RealtorModel.FK_property_Realtor" FromRole="property" ToRole="Realtor" />
+          <NavigationProperty Name="Sentence" Relationship="RealtorModel.FK_Sentence_property" FromRole="property" ToRole="Sentence" />
+        </EntityType>
+        <EntityType Name="Realtor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comission" Type="Int32" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="demand" Relationship="RealtorModel.FK_demand_Realtor" FromRole="Realtor" ToRole="demand" />
+          <NavigationProperty Name="property" Relationship="RealtorModel.FK_property_Realtor" FromRole="Realtor" ToRole="property" />
+          <NavigationProperty Name="Sentence" Relationship="RealtorModel.FK_Sentence_Realtor" FromRole="Realtor" ToRole="Sentence" />
+        </EntityType>
+        <EntityType Name="Sentence">
+          <Key>
+            <PropertyRef Name="IdSentence" />
+          </Key>
+          <Property Name="IdSentence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="IdRealtor" Type="Int32" />
+          <Property Name="IdProperty" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="Client" Relationship="RealtorModel.FK_Sentence_Client" FromRole="Sentence" ToRole="Client" />
+          <NavigationProperty Name="Deal" Relationship="RealtorModel.FK_Deal_Sentence" FromRole="Sentence" ToRole="Deal" />
+          <NavigationProperty Name="property" Relationship="RealtorModel.FK_Sentence_property" FromRole="Sentence" ToRole="property" />
+          <NavigationProperty Name="Realtor" Relationship="RealtorModel.FK_Sentence_Realtor" FromRole="Sentence" ToRole="Realtor" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Apartment_Client">
+          <End Type="RealtorModel.Client" Role="Client" Multiplicity="0..1" />
+          <End Type="RealtorModel.Apartment" Role="Apartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Apartment">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_Apartment">
+          <End Type="RealtorModel.Apartment" Role="Apartment" Multiplicity="0..1" />
+          <End Type="RealtorModel.demand" Role="demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Apartment">
+              <PropertyRef Name="IdApartment" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="TypePropetry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_Client">
+          <End Type="RealtorModel.Client" Role="Client" Multiplicity="0..1" />
+          <End Type="RealtorModel.demand" Role="demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_House_Client">
+          <End Type="RealtorModel.Client" Role="Client" Multiplicity="0..1" />
+          <End Type="RealtorModel.House" Role="House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="House">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Land_Client">
+          <End Type="RealtorModel.Client" Role="Client" Multiplicity="0..1" />
+          <End Type="RealtorModel.Land" Role="Land" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Land">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sentence_Client">
+          <End Type="RealtorModel.Client" Role="Client" Multiplicity="0..1" />
+          <End Type="RealtorModel.Sentence" Role="Sentence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sentence">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deal_demand">
+          <End Type="RealtorModel.demand" Role="demand" Multiplicity="0..1" />
+          <End Type="RealtorModel.Deal" Role="Deal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="demand">
+              <PropertyRef Name="IdDemand" />
+            </Principal>
+            <Dependent Role="Deal">
+              <PropertyRef Name="IdDemand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deal_Sentence">
+          <End Type="RealtorModel.Sentence" Role="Sentence" Multiplicity="0..1" />
+          <End Type="RealtorModel.Deal" Role="Deal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sentence">
+              <PropertyRef Name="IdSentence" />
+            </Principal>
+            <Dependent Role="Deal">
+              <PropertyRef Name="IdSentence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_House">
+          <End Type="RealtorModel.House" Role="House" Multiplicity="0..1" />
+          <End Type="RealtorModel.demand" Role="demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="IdHouse" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="TypePropetry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_Land">
+          <End Type="RealtorModel.Land" Role="Land" Multiplicity="0..1" />
+          <End Type="RealtorModel.demand" Role="demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Land">
+              <PropertyRef Name="IdLand" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="TypePropetry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_NameTypPropetry">
+          <End Type="RealtorModel.NameTypPropetry" Role="NameTypPropetry" Multiplicity="0..1" />
+          <End Type="RealtorModel.demand" Role="demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NameTypPropetry">
+              <PropertyRef Name="IdNamyType" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="NameType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_demand_Realtor">
+          <End Type="RealtorModel.Realtor" Role="Realtor" Multiplicity="0..1" />
+          <End Type="RealtorModel.demand" Role="demand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Realtor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="demand">
+              <PropertyRef Name="IdRealtor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_property_Realtor">
+          <End Type="RealtorModel.Realtor" Role="Realtor" Multiplicity="0..1" />
+          <End Type="RealtorModel.property" Role="property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Realtor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="idRealtor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sentence_property">
+          <End Type="RealtorModel.property" Role="property" Multiplicity="0..1" />
+          <End Type="RealtorModel.Sentence" Role="Sentence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="property">
+              <PropertyRef Name="idProperty" />
+            </Principal>
+            <Dependent Role="Sentence">
+              <PropertyRef Name="IdProperty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sentence_Realtor">
+          <End Type="RealtorModel.Realtor" Role="Realtor" Multiplicity="0..1" />
+          <End Type="RealtorModel.Sentence" Role="Sentence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Realtor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sentence">
+              <PropertyRef Name="IdRealtor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище RealtorModelContainer" CdmEntityContainer="RealtorEntities">
+          <EntitySetMapping Name="Apartment">
+            <EntityTypeMapping TypeName="RealtorModel.Apartment">
+              <MappingFragment StoreEntitySet="Apartment">
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="square" ColumnName="square" />
+                <ScalarProperty Name="NumberOfRooms" ColumnName="NumberOfRooms" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="IdApartment" ColumnName="IdApartment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="RealtorModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deal">
+            <EntityTypeMapping TypeName="RealtorModel.Deal">
+              <MappingFragment StoreEntitySet="Deal">
+                <ScalarProperty Name="ComPrice" ColumnName="ComPrice" />
+                <ScalarProperty Name="IdSentence" ColumnName="IdSentence" />
+                <ScalarProperty Name="IdDemand" ColumnName="IdDemand" />
+                <ScalarProperty Name="idDeal" ColumnName="idDeal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="demand">
+            <EntityTypeMapping TypeName="RealtorModel.demand">
+              <MappingFragment StoreEntitySet="demand">
+                <ScalarProperty Name="MaxPrice" ColumnName="MaxPrice" />
+                <ScalarProperty Name="MinPrice" ColumnName="MinPrice" />
+                <ScalarProperty Name="TypePropetry" ColumnName="TypePropetry" />
+                <ScalarProperty Name="NameType" ColumnName="NameType" />
+                <ScalarProperty Name="IdRealtor" ColumnName="IdRealtor" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="IdDemand" ColumnName="IdDemand" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House">
+            <EntityTypeMapping TypeName="RealtorModel.House">
+              <MappingFragment StoreEntitySet="House">
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="square" ColumnName="square" />
+                <ScalarProperty Name="NumberOfRooms" ColumnName="NumberOfRooms" />
+                <ScalarProperty Name="Storeys" ColumnName="Storeys" />
+                <ScalarProperty Name="IdHouse" ColumnName="IdHouse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Land">
+            <EntityTypeMapping TypeName="RealtorModel.Land">
+              <MappingFragment StoreEntitySet="Land">
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="square" ColumnName="square" />
+                <ScalarProperty Name="IdLand" ColumnName="IdLand" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manager">
+            <EntityTypeMapping TypeName="RealtorModel.Manager">
+              <MappingFragment StoreEntitySet="Manager">
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="IdManager" ColumnName="IdManager" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NameTypPropetry">
+            <EntityTypeMapping TypeName="RealtorModel.NameTypPropetry">
+              <MappingFragment StoreEntitySet="NameTypPropetry">
+                <ScalarProperty Name="NameType" ColumnName="NameType" />
+                <ScalarProperty Name="IdNamyType" ColumnName="IdNamyType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="property">
+            <EntityTypeMapping TypeName="RealtorModel.property">
+              <MappingFragment StoreEntitySet="property">
+                <ScalarProperty Name="idRealtor" ColumnName="idRealtor" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="idProperty" ColumnName="idProperty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Realtor">
+            <EntityTypeMapping TypeName="RealtorModel.Realtor">
+              <MappingFragment StoreEntitySet="Realtor">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Comission" ColumnName="Comission" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sentence">
+            <EntityTypeMapping TypeName="RealtorModel.Sentence">
+              <MappingFragment StoreEntitySet="Sentence">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IdProperty" ColumnName="IdProperty" />
+                <ScalarProperty Name="IdRealtor" ColumnName="IdRealtor" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="IdSentence" ColumnName="IdSentence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="RealtorModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A99DF0A3-CA2A-40EC-92E1-73F4EC6C9C6F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ContoraRealtor</RootNamespace>
+    <AssemblyName>ContoraRealtor</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.94.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.94.2\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.3.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.3\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Manager\DeaL\Deal_1.xaml.cs">
+      <DependentUpon>Deal_1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaRealtor\DemandsRealtors\CurrentDemandsRealtorsList.xaml.cs">
+      <DependentUpon>CurrentDemandsRealtorsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Sentensce_Manager\CurrentSentensce_Managers.xaml.cs">
+      <DependentUpon>CurrentSentensce_Managers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Sentensce_Manager\AddSentensce_Managers.xaml.cs">
+      <DependentUpon>AddSentensce_Managers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaClienta_1\DemandsClients\AddDemandClient.xaml.cs">
+      <DependentUpon>AddDemandClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaClienta_1\DemandsClients\ClientsDemands.xaml.cs">
+      <DependentUpon>ClientsDemands.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaClienta_1\ClientsForms.xaml.cs">
+      <DependentUpon>ClientsForms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaClienta_1\DemandsClients\CurrentDemandClients.xaml.cs">
+      <DependentUpon>CurrentDemandClients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaClienta_1\SentencesClients\SentenceClients.xaml.cs">
+      <DependentUpon>SentenceClients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaRealtor\DemandsRealtors\DemandsRealtorsList.xaml.cs">
+      <DependentUpon>DemandsRealtorsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaRealtor\FormsRealtors.xaml.cs">
+      <DependentUpon>FormsRealtors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaRealtor\SentencesRealtors\AddSentenceRealtorsList.xaml.cs">
+      <DependentUpon>AddSentenceRealtorsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaRealtor\SentencesRealtors\CurrentSentenceRealtorsList.xaml.cs">
+      <DependentUpon>CurrentSentenceRealtorsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormaRealtor\SentencesRealtors\SentenceRealtorsList.xaml.cs">
+      <DependentUpon>SentenceRealtorsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\Apartament\ApartList.xaml.cs">
+      <DependentUpon>ApartList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Apartment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Client_Manager\ClientList.xaml.cs">
+      <DependentUpon>ClientList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\Apartament\CurrentApart.xaml.cs">
+      <DependentUpon>CurrentApart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Client_Manager\CurrentClient.xaml.cs">
+      <DependentUpon>CurrentClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\DeaL\CurrentDeal.xaml.cs">
+      <DependentUpon>CurrentDeal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Demand\CurrentDemand.xaml.cs">
+      <DependentUpon>CurrentDemand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\House\CurrentHouse.xaml.cs">
+      <DependentUpon>CurrentHouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\Land\CurrentLand.xaml.cs">
+      <DependentUpon>CurrentLand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Manager\CurrentManager.xaml.cs">
+      <DependentUpon>CurrentManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Realtor_Manager\CurrentRealtor.xaml.cs">
+      <DependentUpon>CurrentRealtor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Sentensce\CurrentSentence.xaml.cs">
+      <DependentUpon>CurrentSentence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Deal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="demand.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Demand\DemandListxaml.xaml.cs">
+      <DependentUpon>DemandListxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="House.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\House\HouseList.xaml.cs">
+      <DependentUpon>HouseList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Land.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\Land\LandLIst.xaml.cs">
+      <DependentUpon>LandLIst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Manager\ManagerList.xaml.cs">
+      <DependentUpon>ManagerList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NameTypPropetry.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="property.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Realtor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Realtor_Manager\RealtorList.xaml.cs">
+      <DependentUpon>RealtorList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Realtors.xaml.cs">
+      <DependentUpon>Realtors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\Land\RegistLand.xaml.cs">
+      <DependentUpon>RegistLand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\Apartament\RegistrApart.xaml.cs">
+      <DependentUpon>RegistrApart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Client_Manager\RegistrClient.xaml.cs">
+      <DependentUpon>RegistrClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\DeaL\RegistrDeal.xaml.cs">
+      <DependentUpon>RegistrDeal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Demand\RegistrDemand.xaml.cs">
+      <DependentUpon>RegistrDemand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\House\RegistrHouse.xaml.cs">
+      <DependentUpon>RegistrHouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Manager_Manager\RegistrManager.xaml.cs">
+      <DependentUpon>RegistrManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Realtor_Manager\RegistrRealtor.xaml.cs">
+      <DependentUpon>RegistrRealtor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Sentensce\RegistrSentence.xaml.cs">
+      <DependentUpon>RegistrSentence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityContext.cs" />
+    <Compile Include="Sentence.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Sentensce\SentenceList.xaml.cs">
+      <DependentUpon>SentenceList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Sentensce_Manager\Sentensce_Managers.xaml.cs">
+      <DependentUpon>Sentensce_Managers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartAp.xaml.cs">
+      <DependentUpon>StartAp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\TypePropetry\TypeProperty.xaml.cs">
+      <DependentUpon>TypeProperty.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Manager\DeaL\Deal_1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaRealtor\DemandsRealtors\CurrentDemandsRealtorsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Sentensce_Manager\CurrentSentensce_Managers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Sentensce_Manager\AddSentensce_Managers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaClienta_1\DemandsClients\AddDemandClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaClienta_1\DemandsClients\ClientsDemands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaClienta_1\ClientsForms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaClienta_1\DemandsClients\CurrentDemandClients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaClienta_1\SentencesClients\SentenceClients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaRealtor\DemandsRealtors\DemandsRealtorsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaRealtor\FormsRealtors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaRealtor\SentencesRealtors\AddSentenceRealtorsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaRealtor\SentencesRealtors\CurrentSentenceRealtorsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaRealtor\SentencesRealtors\SentenceRealtorsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\Apartament\ApartList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Client_Manager\ClientList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\Apartament\CurrentApart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Client_Manager\CurrentClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\DeaL\CurrentDeal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Demand\CurrentDemand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\House\CurrentHouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\Land\CurrentLand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Manager_Manager\CurrentManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Realtor_Manager\CurrentRealtor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Sentensce\CurrentSentence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Demand\DemandListxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\House\HouseList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\Land\LandLIst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Manager\Manager_Manager\ManagerList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Realtor_Manager\RealtorList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Realtors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\Land\RegistLand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\Apartament\RegistrApart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Client_Manager\RegistrClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\DeaL\RegistrDeal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Demand\RegistrDemand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\House\RegistrHouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Manager_Manager\RegistrManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Realtor_Manager\RegistrRealtor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Sentensce\RegistrSentence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Sentensce\SentenceList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\TypePropetry\TypeProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Sentensce_Manager\Sentensce_Managers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartAp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Resours\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ACTIVEXLib">
+      <Guid>{012F24C1-35B0-11D0-BF2D-0000E8D0D146}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VSTOEE100">
+      <Guid>{AAB9C2AA-6036-4AE1-A41C-A40AB7F39520}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VSTOEE90">
+      <Guid>{E985809A-84A6-4F35-86D6-9B52119AB9D7}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

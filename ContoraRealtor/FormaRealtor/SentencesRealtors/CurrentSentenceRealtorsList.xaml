@@ -1,0 +1,22 @@
+﻿<Window x:Class="ContoraRealtor.FormaRealtor.SentencesRealtors.CurrentSentenceRealtorsList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContoraRealtor.FormaRealtor.SentencesRealtors"
+        mc:Ignorable="d"
+        Background="#FFCADEEB"
+             WindowStartupLocation="CenterScreen" 
+        Title="Редактирование предложения" Height="552.435" Width="821.028" Loaded="Window_Loaded" Icon="/ContoraRealtor;component/Resours/logo.png" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <DataGrid IsReadOnly="True" ColumnWidth="*"  CanUserAddRows="False" CanUserDeleteRows="False" x:Name="ClientLi" HorizontalAlignment="Left" Height="146" Margin="12,31,0,0" VerticalAlignment="Top" Width="772" Loaded="DataGrid_Loaded"/>
+        <DataGrid IsReadOnly="True" ColumnWidth="*" CanUserAddRows="False" CanUserDeleteRows="False" x:Name="PropertLi" HorizontalAlignment="Left" Height="135" Margin="4,208,0,0" VerticalAlignment="Top" Width="772"  Loaded="PropertLi_Loaded"/>
+        <TextBox x:Name="Price" HorizontalAlignment="Left" Height="23" Margin="308,380,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Update" Content="Обновить" HorizontalAlignment="Left" Margin="335,408,0,0" VerticalAlignment="Top" Width="75" Click="Update_Click"/>
+        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="335,433,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="335,458,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click"/>
+        <Label Content="Выбирите клиента" HorizontalAlignment="Left" Margin="314,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="Выбирите объект недвижимости" HorizontalAlignment="Left" Margin="291,182,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите цену (в рублях)" HorizontalAlignment="Left" Margin="298,349,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

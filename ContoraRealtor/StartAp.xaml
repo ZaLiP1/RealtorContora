@@ -1,0 +1,18 @@
+﻿<Window x:Class="ContoraRealtor.StartAp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContoraRealtor"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" 
+        Background="#FFCADEEB"
+        Title="Esoft" Height="282.899" Width="644.625" ResizeMode="NoResize" Icon="Resours/logo.png" Closing="Window_Closing">
+    <Grid>
+        <Button Content="Войти как Клиент" HorizontalAlignment="Left" Margin="225,80,0,0" VerticalAlignment="Top" Width="166" Click="Button_Click"/>
+        <Button Content="Войти как Риелтор" HorizontalAlignment="Left" Margin="225,105,0,0" VerticalAlignment="Top" Width="166" Click="Button_Click_1"/>
+        <Button Content="Войти как Менеджер" HorizontalAlignment="Left" Margin="225,130,0,0" VerticalAlignment="Top" Width="166" Click="Button_Click_2"/>
+        <Button x:Name="Exit" Content="Выход" HorizontalAlignment="Left" Margin="225,155,0,0" VerticalAlignment="Top" Width="166" Click="Exit_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="ContoraRealtor.FormaRealtor.SentencesRealtors.AddSentenceRealtorsList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContoraRealtor.FormaRealtor.SentencesRealtors"
+        mc:Ignorable="d"
+             WindowStartupLocation="CenterScreen" 
+         Background="#FFCADEEB"
+        Title="Добавление предложения" Height="610.479" Width="805.963" ResizeMode="NoResize" Icon="/ContoraRealtor;component/Resours/logo.png" Closing="Window_Closing">
+    <Grid>
+        <DataGrid IsReadOnly="True"  ColumnWidth="*" CanUserAddRows="False" CanUserDeleteRows="False" x:Name="ClientLi" HorizontalAlignment="Left" Height="166" Margin="10,41,0,0" VerticalAlignment="Top" Width="774" Loaded="ClientLi_Loaded"/>
+        <DataGrid IsReadOnly="True" ColumnWidth="*" CanUserAddRows="False" CanUserDeleteRows="False" x:Name="PropertLi" HorizontalAlignment="Left" Height="162" Margin="10,235,0,0" VerticalAlignment="Top" Width="774" Loaded="propert_Loaded"/>
+        <Button  Content="Создать" HorizontalAlignment="Left" Margin="308,488,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_1"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="308,514,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
+        <TextBox x:Name="Price" HorizontalAlignment="Left" Height="23" Margin="287,438,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Выбирите клиента" HorizontalAlignment="Left" Margin="299,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Выбирите объект недвижимости" HorizontalAlignment="Left" Margin="259,209,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите цену (в рублях)" HorizontalAlignment="Left" Margin="278,407,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

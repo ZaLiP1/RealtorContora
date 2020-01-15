@@ -1,0 +1,18 @@
+﻿<Window x:Class="ContoraRealtor.FormaClienta_1.SentencesClients.SentenceClients"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContoraRealtor.FormaClienta_1.SentencesClients"
+        mc:Ignorable="d"
+             WindowStartupLocation="CenterScreen" 
+        Background="#FFCADEEB"
+        Title="Список предложений" Height="472.43" Width="1114.019" Icon="/ContoraRealtor;component/Resours/logo.png" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <DataGrid IsReadOnly="True" ColumnWidth="*" CanUserAddRows="False" CanUserDeleteRows="False" x:Name="SentenceLi" HorizontalAlignment="Left" Height="380" Margin="10,10,0,0" VerticalAlignment="Top" Width="1049" Loaded="SentenceLi_Loaded" />
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="984,395,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="ExcelFails" Content="Отчёт" HorizontalAlignment="Left" Margin="888,395,0,0" VerticalAlignment="Top" Width="75" Click="ExcelFails_Click"/>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="ContoraRealtor.FormaRealtor.FormsRealtors"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContoraRealtor.FormaRealtor"
+        mc:Ignorable="d"
+        Background="#FFCADEEB"
+             WindowStartupLocation="CenterScreen" 
+        Title="Риелтор" Height="451.402" Width="821.028" Icon="/ContoraRealtor;component/Resours/logo.png" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <Button x:Name="sentence" Content="Список предложений" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="183" Click="sentence_Click"/>
+        <Button x:Name="demand" Content="Список потребностей" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="183" Click="demand_Click"/>
+        <Button Content="Список сделок" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="183" Click="Button_Click_1"/>
+        <Button Content="Список объетокв недвижимости" HorizontalAlignment="Left" Margin="198,10,0,0" VerticalAlignment="Top" Width="207" Click="Button_Click"/>
+        <Button x:Name="exit" Content="Выход из учётной записи" HorizontalAlignment="Left" Margin="583,378,0,0" VerticalAlignment="Top" Width="200" Click="exit_Click"/>
+    </Grid>
+</Window>

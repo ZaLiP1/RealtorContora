@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81f7928109db4493aa65067ea8ea1fc4" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="RealtorModel.Apartment" Width="1.5" PointX="3" PointY="12.375" />
+        <EntityTypeShape EntityType="RealtorModel.Client" Width="1.5" PointX="0.75" PointY="8.5" />
+        <EntityTypeShape EntityType="RealtorModel.Deal" Width="1.5" PointX="7.5" PointY="10.25" />
+        <EntityTypeShape EntityType="RealtorModel.demand" Width="1.5" PointX="5.25" PointY="10.125" />
+        <EntityTypeShape EntityType="RealtorModel.House" Width="1.5" PointX="3" PointY="15.5" />
+        <EntityTypeShape EntityType="RealtorModel.Land" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="RealtorModel.Manager" Width="1.5" PointX="3.75" PointY="3" />
+        <EntityTypeShape EntityType="RealtorModel.NameTypPropetry" Width="1.5" PointX="3" PointY="19.125" />
+        <EntityTypeShape EntityType="RealtorModel.property" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="RealtorModel.Realtor" Width="1.5" PointX="1.5" PointY="0.75" />
+        <EntityTypeShape EntityType="RealtorModel.Sentence" Width="1.5" PointX="3" PointY="8.875" />
+        <EntityTypeShape EntityType="RealtorModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3" />
+        <AssociationConnector Association="RealtorModel.FK_Apartment_Client" />
+        <AssociationConnector Association="RealtorModel.FK_demand_Apartment" />
+        <AssociationConnector Association="RealtorModel.FK_demand_Client" />
+        <AssociationConnector Association="RealtorModel.FK_House_Client" />
+        <AssociationConnector Association="RealtorModel.FK_Land_Client" />
+        <AssociationConnector Association="RealtorModel.FK_Sentence_Client" />
+        <AssociationConnector Association="RealtorModel.FK_Deal_demand" />
+        <AssociationConnector Association="RealtorModel.FK_Deal_Sentence" />
+        <AssociationConnector Association="RealtorModel.FK_demand_House" />
+        <AssociationConnector Association="RealtorModel.FK_demand_Land" />
+        <AssociationConnector Association="RealtorModel.FK_demand_NameTypPropetry" />
+        <AssociationConnector Association="RealtorModel.FK_demand_Realtor" />
+        <AssociationConnector Association="RealtorModel.FK_property_Realtor" />
+        <AssociationConnector Association="RealtorModel.FK_Sentence_property" />
+        <AssociationConnector Association="RealtorModel.FK_Sentence_Realtor" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
